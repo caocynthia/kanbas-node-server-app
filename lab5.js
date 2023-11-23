@@ -120,6 +120,13 @@ function Lab5(app) {
     todo.title = title;
     res.json(todos);
   });
+
+  app.get("/a5/todos/:id/completed/:completed", (req, res) => {
+    const { id, completed } = req.params;
+    const todo = todos.find((t) => t.id === parseInt(id));
+    todo.completed = completed;
+    res.json(todo);
+  });
 }
 
 export default Lab5;
