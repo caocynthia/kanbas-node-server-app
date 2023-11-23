@@ -15,17 +15,24 @@ const todos = [
 ];
 
 function Lab5(app) {
+  app.get("/a5/welcome", (req, res) => {
+    res.send("Welcome to Assignment 5");
+  });
+
   app.get("/a5/assignment", (req, res) => {
     res.json(assignment);
   });
+
   app.get("/a5/assignment/title/:newTitle", (req, res) => {
     const { newTitle } = req.params;
     assignment.title = newTitle;
     res.json(assignment);
   });
+
   app.get("/a5/assignment/title", (req, res) => {
     res.json(assignment.title);
   });
+
   app.get("/a5/assignment/description", (req, res) => {
     res.json(assignment.description);
   });
@@ -55,10 +62,6 @@ function Lab5(app) {
     const { a, b } = req.params;
     const sum = parseInt(a) - parseInt(b);
     res.send(sum.toString());
-  });
-
-  app.get("/a5/welcome", (req, res) => {
-    res.send("Welcome to Lab 5!");
   });
 
   app.get("/a5/todos", (req, res) => {
