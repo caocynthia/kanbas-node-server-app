@@ -29,6 +29,18 @@ function Lab5(app) {
     res.json(assignment);
   });
 
+  app.get("/a5/assignment/score/:newScore", (req, res) => {
+    const { newScore } = req.params;
+    assignment.score = newScore;
+    res.json(assignment);
+  });
+
+  app.get("/a5/assignment/completed/:newCompleted", (req, res) => {
+    const { newCompleted } = req.params;
+    assignment.completed = newCompleted;
+    res.json(assignment);
+  });
+
   app.get("/a5/assignment/title", (req, res) => {
     res.json(assignment.title);
   });
