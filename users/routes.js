@@ -45,7 +45,6 @@ function UserRoutes(app) {
 
   const account = async (req, res) => {
     res.json(req.session["currentUser"]);
-    console.log(currentUser);
   };
 
   const findUserById = async (req, res) => {
